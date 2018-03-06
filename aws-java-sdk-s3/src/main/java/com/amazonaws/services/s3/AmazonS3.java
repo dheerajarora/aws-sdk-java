@@ -152,6 +152,8 @@ import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
 import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
+import com.amazonaws.services.s3.model.metadata.SearchMetadataRequest;
+import com.amazonaws.services.s3.model.metadata.SearchMetadataResponse;
 import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
 import com.amazonaws.services.s3.waiters.AmazonS3Waiters;
 import java.io.File;
@@ -5267,4 +5269,14 @@ public interface AmazonS3 extends S3DirectSpi {
     URL getUrl(String bucketName, String key);
 
     AmazonS3Waiters waiters();
+    
+    /**
+     * Search objects.
+     *
+     * @param searchMetadataRequest the search metadata request
+     * @return the search metadata response
+     * @throws SdkClientException the sdk client exception
+     * @throws AmazonServiceException the amazon service exception
+     */
+    SearchMetadataResponse searchObjects(SearchMetadataRequest searchMetadataRequest) throws SdkClientException, AmazonServiceException;
 }
