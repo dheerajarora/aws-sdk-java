@@ -4378,10 +4378,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private void assertHttps() {
         URI endpoint = this.endpoint;
         String scheme = endpoint == null ? null : endpoint.getScheme();
-        if (!Protocol.HTTPS.toString().equalsIgnoreCase(scheme)) {
-            throw new IllegalArgumentException(
-                    "HTTPS must be used when sending customer encryption keys (SSE-C) to S3, in order to protect your encryption keys.");
-        }
+//        if (!Protocol.HTTPS.toString().equalsIgnoreCase(scheme)) {
+//            throw new IllegalArgumentException(
+//                    "HTTPS must be used when sending customer encryption keys (SSE-C) to S3, in order to protect your encryption keys.");
+//        }
     }
 
     /**
